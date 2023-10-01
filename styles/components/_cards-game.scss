@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/placeholders' as ph;
+@use '../abstracts/mixins' as m;
+
+
+.container-game{
+    @extend %flex-center;
+    @extend %flex-wrap;
+    margin-top: 50px;
+
+
+    &__card{
+        @include  m.box-size ($width: 200px, $height: 200px);
+        margin: 10px;
+        position: relative;
+        cursor: pointer;
+
+        & div{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            transition: .4s;
+            border-radius: 14px;
+            background-color: var(--nextui-colors-accents1);
+        }
+
+        &--question{
+            display: grid;
+            place-content: center;
+            transform: perspective(200px) rotateY(0deg);
+            border: 1px solid #C9A9E9;
+        }
+
+        &--img{
+            transform: perspective(200px) rotateY(180deg);
+            border: 1px solid #936316;
+            overflow: hidden;
+            padding: 8%;
+
+            & img{
+                object-fit: cover;
+            }
+
+        }
+
+        & .card-front {
+            transform: perspective(200px) rotateY(180deg);
+        }
+        & .card-back {
+            transform: perspective(200px) rotateY(0deg);
+        }
+    }
+}
+
+

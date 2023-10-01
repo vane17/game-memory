@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/placeholders' as ph;
+@use '../abstracts/mixins' as m;
+
+.time-game{
+    @extend %flex-center;
+    width: 100%;
+    gap: 30px;
+    &__card{
+        height: 180px;
+        min-width: 250px;
+        background-color: var(--nextui-colors-accents1);
+        border-radius: 14px;
+        padding: 15px;
+        border: 1px solid #4ADE7B;
+        &   span{
+            margin-left: 10px;
+            color: #4ADE7B;
+        }
+    }
+}

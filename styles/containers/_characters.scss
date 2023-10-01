@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/placeholders' as ph;
+@use '../abstracts/mixins' as m;
+
+
+.characters{
+    @extend %flex-center;
+    @extend %flex-wrap;
+    gap: 30px;
+
+}
+

@@ -1,0 +1,137 @@
+@use './functions' as f;
+
+//=============Positioning============
+%inset-0 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+%position-absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%position-absolute-v-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+%position-absolute-h-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+%grid-center {
+    display: grid;
+    place-items: center;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-r-center-h {
+    display: flex;
+    justify-content: center;
+}
+
+%flex-r-center-v {
+    display: flex;
+    align-items: center;
+}
+
+%flex-c-center-h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%flex-c-center-v {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//=================Size================
+
+%size-100 {
+    width: 100%;
+    height: 100%;
+}
+
+%card-icon {
+    height: 4rem;
+    object-fit: cover;
+}
+
+%max-page-size {
+    max-width: 102.4rem;
+}
+
+//================Display==============
+%hidden {
+    display: none;
+}
+
+//=================Text================
+
+%text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//================Shadow===============
+
+%shadow-sm {
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.05);
+    div[data-theme="dark"] &{
+        box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.2);
+    }
+}
+
+%shadow-md {
+    box-shadow: 0 0 1.5px 1px rgba(0,0,0,0.1);
+}
+
+//=============Transition=============
+
+%all-transition-150 {
+    transition: all ease-in-out 150ms;
+}
+
+%theme-color-transition {
+    transition: all ease-in-out 200ms;
+}
+
+//=============Border Radius==========
+
+%rounded-full {
+    border-radius: 50%;
+}
+

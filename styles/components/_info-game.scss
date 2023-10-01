@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/placeholders' as ph;
+@use '../abstracts/mixins' as m;
+
+.info-game{
+    @extend %flex-column-center;
+}
