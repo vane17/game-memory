@@ -1,0 +1,18 @@
+@use './variables' as v;
+@use "sass:math";
+
+@function color($name){
+    $theme: v.$color-palette-dark;
+    $color: map-get($map: $theme, $key: $name);
+
+    @return $color;
+};
+
+@function break-point($name){
+    $value: map-get($map: v.$break-points, $key: $name);
+    @return math.div(($value*10), 16);
+};
+
+@function font-size($size){
+    @return map-get($map: v.$font-sizes, $key: $size);
+}

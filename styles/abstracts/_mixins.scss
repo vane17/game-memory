@@ -1,0 +1,92 @@
+@use './variables' as v;
+@use './functions' as f;
+@use './placeholders' as ph;
+
+@mixin inset ( $top, $right, $bottom, $left){
+    postion: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin font ($family, $weight, $size, $color, $spacing: normal ){
+    font: {
+        family: $family;
+        weight: $weight;
+        size: f.font-size( $size);
+    }
+    @if $spacing != normal {
+        letter-spacing: $spacing;
+    }
+    color: f.color($color);
+}
+
+@mixin box-size ($width:none, $height:none, $max-width:none, $max-height:none, $min-width:none, $min-height:none) {
+    @if $width != none {
+        width: $width;
+    }
+    @if $height != none {
+        height: $height;
+    }
+    @if $max-width != none {
+        max-width: $max-width;
+    }
+    @if $max-height != none {
+        max-height: $max-height;
+    }
+    @if $min-width != none {
+        min-width: $min-width;
+    }
+    @if $min-height != none {
+        min-height: $min-height;
+    }
+}
+
+@mixin flex-content ($position-h, $position-v:none, $direction: row, $gap: 0, $wrap:none){
+    display: flex;
+    flex-direction: $direction;
+    @if $wrap != none {
+        flex-wrap: $wrap;
+    }
+    @if $gap != 0 {
+        gap: $gap;
+    }
+    @if $direction == row or $direction == row-reverse {
+        justify-content: $position-h;
+        @if $position-v != none {
+            align-items: $position-v;
+        }
+    }
+    @else if $direction == column or $direction == column-reverse {
+        align-items: $position-h;
+        @if $position-v != none {
+            justify-content: $position-v;
+        }
+    }
+}
+
+@mixin image-size ($width, $height, $fit:none){
+    @include box-size($width, $height);
+    @if $fit != none {
+        object-fit: $fit;
+    }
+}
+
+
+%box-base {
+    box-sizing: content-box;
+    @extend %position-absolute-center;
+    @extend %size-100;
+    opacity: 0;
+    content: '';
+}
+
+@mixin box-select ($keyFrame, $animation-time, $rounded, $color-light, $color-dark:none) {
+    &::before {
+        @extend %box-base;
+        animation: $keyFrame $animation-time alternate both;
+        background-color: $color-light;
+        border-radius: $rounded;
+    }
+}

@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/placeholders' as ph;
+@use '../abstracts/mixins' as m;
+
+.game{
+    @extend %flex-column-center;
+    padding: 40px 8%;
+    &__container{
+        @include  m.box-size ($width: 100%);
+        margin-top: 40px;
+    }
+}
