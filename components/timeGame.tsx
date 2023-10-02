@@ -31,9 +31,9 @@ export const TimeGame : React.FC<TimeGameProps> = ({ jugarInPLay , points, level
 
       <CountdownCircleTimer
         isPlaying={jugarInPLay}
-        duration={60}
+        duration={210}
         colors={['#F0D3FC', '#DDA9F9', '#C17CEF','#A258DF', '#5E1DAD','#220760','#220760']}
-        colorsTime={[60, 50, 40, 30, 20 , 10, 0]}
+        colorsTime={[210, 180, 150, 120, 90 , 60, 0]}
         onComplete={() => {
           setVisible(true);
         }}
